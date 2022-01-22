@@ -8,6 +8,7 @@ import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
+import { Tags } from "./tags";
 
 export const Note = ({
     id,
@@ -68,6 +69,7 @@ export const Note = ({
                         <DeleteIcon />
                     </IconButton>
                 </Box>
+                <Tags tags={tags} />
             </Box>
         </Grid>
     );

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
@@ -12,6 +11,8 @@ import { Logo } from "../commons/logo";
 import { useNotes } from "../hooks/useNotes";
 import { Tags } from "../commons/tags";
 import { Display } from "../commons/display";
+
+import { tags } from "../constants";
 
 export const Dashboard = () => {
     const {
@@ -39,7 +40,7 @@ export const Dashboard = () => {
                     justifyContent: "space-betwee",
                 }}
             >
-                <Tags />
+                <Tags tags={tags} />
                 <Display
                     selected={view}
                     handleSelectedView={handleSelectedView}
@@ -89,8 +90,4 @@ export const Dashboard = () => {
             ) : null}
         </Container>
     );
-};
-
-Dashboard.propTypes = {
-    setOpenModal: PropTypes.func,
 };

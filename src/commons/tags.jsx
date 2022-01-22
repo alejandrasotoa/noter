@@ -1,11 +1,10 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import Grid from "@mui/material/Grid";
 import Chip from "@mui/material/Chip";
 
-import { tags } from "../constants";
-
-export const Tags = () => (
+export const Tags = ({ tags }) => (
     <Grid
         container
         component="ul"
@@ -19,3 +18,7 @@ export const Tags = () => (
         ))}
     </Grid>
 );
+
+Tags.propTypes = {
+    tags: PropTypes.arrayOf(PropTypes.string),
+};
