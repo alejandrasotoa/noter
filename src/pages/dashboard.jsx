@@ -37,7 +37,7 @@ export const Dashboard = () => {
                 sx={{
                     width: "100%",
                     display: "flex",
-                    justifyContent: "space-betwee",
+                    justifyContent: "space-between",
                 }}
             >
                 <Tags tags={tags} />

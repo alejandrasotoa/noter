@@ -21,7 +21,7 @@ export const Note = ({
 }) => {
     const gridType = isList ? { xs: 12 } : { xs: 2, sm: 4, md: 4 };
     return (
-        <Grid item component="li" {...gridType}>
+        <Grid item component="li" {...gridType} sx={{ padding: 0 }}>
             <Box
                 sx={{
                     padding: 4,
@@ -31,8 +31,8 @@ export const Note = ({
             >
                 <Typography
                     component="h3"
+                    marginBottom={3}
                     variant="h3"
-                    sx={{ marginBottom: 3 }}
                     color="black"
                 >
                     {title}
@@ -42,9 +42,11 @@ export const Note = ({
                     variant="p"
                     color="black"
                     fontWeight={300}
+                    marginBottom={3}
                 >
                     {description}
                 </Typography>
+                <Tags tags={tags} />
                 <Box
                     sx={{
                         display: "flex",
@@ -69,7 +71,6 @@ export const Note = ({
                         <DeleteIcon />
                     </IconButton>
                 </Box>
-                <Tags tags={tags} />
             </Box>
         </Grid>
     );

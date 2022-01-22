@@ -1,22 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Grid from "@mui/material/Grid";
+import ListItem from "@mui/material/ListItem";
+import List from "@mui/material/List";
 import Chip from "@mui/material/Chip";
 
 export const Tags = ({ tags }) => (
-    <Grid
-        container
-        component="ul"
-        spacing={2}
-        sx={{ listStyle: "none", padding: 0, margin: 0 }}
-    >
+    <List sx={{ listStyle: "none", padding: 0, margin: 0, display: "flex" }}>
         {tags.map((tag) => (
-            <Grid item component="li" key={tag.toLowerCase()}>
+            <ListItem disablePadding key={tag.toLowerCase()} sx={{marginRight: 1, width: "fit-content"}}>
                 <Chip label={tag} />
-            </Grid>
+            </ListItem>
         ))}
-    </Grid>
+    </List>
 );
 
 Tags.propTypes = {
