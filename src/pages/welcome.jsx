@@ -1,9 +1,9 @@
 import React from "react";
 
 import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
 
 import logo from "../assets/noter-logo.png";
 

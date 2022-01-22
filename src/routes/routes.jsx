@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Routes, Route } from "react-router-dom";
 
 import { Welcome } from "../pages/welcome";
@@ -16,8 +15,4 @@ export const AppRoutes = () => {
             <Route exact path="/sign-up" element={<SignUp />} />
         </Routes>
     );
-};
-
-AppRoutes.propTypes = {
-    isLogged: PropTypes.bool,
 };
