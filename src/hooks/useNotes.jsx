@@ -5,6 +5,7 @@ const notesEmptyState = {
     id: null,
     title: "",
     description: "",
+    tags: [],
 };
 
 export const useNotes = () => {
@@ -17,8 +18,12 @@ export const useNotes = () => {
 
     const updateForm = ({ target }) => {
         const { name, value } = target;
-        setForm({ ...form, [name]: value });
+        setForm({
+            ...form,
+            [name]: typeof value === "string" ? value.split(",") : value,
+        });
     };
+
     const filterNotes = (id) => {
         return notes.filter((note) => id !== note.id);
     };
@@ -40,10 +45,11 @@ export const useNotes = () => {
         closeModal();
     };
 
-    const openNote = ({ id, title = "", description = "" }) => {
-        setForm({ id, title, description });
+    const openNote = ({ id, title = "", description = "", tags = [] }) => {
+        setForm({ id, title, description, tags });
         setIsModalOpen(true);
     };
+
     return {
         notes,
         form,
