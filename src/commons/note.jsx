@@ -20,6 +20,7 @@ export const Note = ({
     isList,
 }) => {
     const gridType = isList ? { xs: 12 } : { xs: 2, sm: 4, md: 4 };
+    console.log({ title, id, description });
     return (
         <Grid item component="li" {...gridType} sx={{ padding: 0 }}>
             <Box
@@ -79,7 +80,7 @@ export const Note = ({
 Note.propTypes = {
     id: PropTypes.string,
     title: PropTypes.string,
-    tags: PropTypes.string,
+    tags: PropTypes.arrayOf(PropTypes.string),
     description: PropTypes.string,
     openNote: PropTypes.func,
     deleteNote: PropTypes.func,

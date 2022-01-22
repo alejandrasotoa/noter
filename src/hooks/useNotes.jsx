@@ -2,6 +2,13 @@ import { useState } from "react";
 import { generateId } from "../utils/generateId";
 
 const notesEmptyState = {
+    id: null,
+    title: "",
+    description: "",
+    tags: [],
+};
+
+const notesDefault = {
     id: generateId(),
     title: "Edit this note or delete it",
     description:
@@ -11,7 +18,7 @@ const notesEmptyState = {
 
 export const useNotes = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [notes, setNotes] = useState([notesEmptyState]);
+    const [notes, setNotes] = useState([notesDefault]);
     const [form, setForm] = useState(notesEmptyState);
 
     const openModal = () => setIsModalOpen(true);
@@ -19,6 +26,7 @@ export const useNotes = () => {
 
     const updateForm = ({ target }) => {
         const { name, value } = target;
+        console.log(value, "sdadaa");
         setForm({
             ...form,
             [name]: typeof value === "string" ? value.split(",") : value,

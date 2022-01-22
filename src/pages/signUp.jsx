@@ -10,7 +10,6 @@ import Container from "@mui/material/Container";
 
 import { useRedirectToDashboard } from "../hooks/useRedirectToDashboard";
 
-
 export const SignUp = () => {
     const { redirectToDashboard } = useRedirectToDashboard();
 
@@ -18,6 +17,8 @@ export const SignUp = () => {
         <Container component="main" maxWidth="xs">
             <Box
                 onSubmit={redirectToDashboard}
+                noValidate
+                component="form"
                 sx={{
                     marginTop: 8,
                     display: "flex",

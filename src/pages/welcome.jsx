@@ -46,8 +46,8 @@ export const Welcome = () => {
                         >
                             Yes, take me to login!
                         </Button>
-                        <Button href="/register" variant="outlined">
-                            No, I want to register!
+                        <Button href="/sign-up" variant="outlined">
+                            No, I want to sign up!
                         </Button>
                     </Box>
                 </Box>
