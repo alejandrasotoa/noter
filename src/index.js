@@ -5,7 +5,7 @@ import "./index.css";
 import App from "./App";
 
 ReactDOM.render(
-    <Router basename="/noter">
+    <Router>
         <React.StrictMode>
             <App />
         </React.StrictMode>
