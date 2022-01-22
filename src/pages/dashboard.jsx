@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 import Container from "@mui/material/Container";
@@ -9,30 +9,20 @@ import Tooltip from "@mui/material/Tooltip";
 import { NoteModal } from "../commons/noteModal";
 import { Notes } from "../commons/notes";
 import { Logo } from "../commons/logo";
-
-const notesEmptyState = {
-    title: "",
-    description: "",
-    color: "white",
-};
+import { useNotes } from "../hooks/useNotes";
 
 export const Dashboard = () => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [notes, setNotes] = useState([]);
-    const [form, setForm] = useState(notesEmptyState);
-
-    const openModal = () => setIsModalOpen(true);
-    const closeModal = () => setIsModalOpen(false);
-
-    const updateForm = ({ target }) => {
-        const { name, value } = target;
-        setForm({ ...form, [name]: value });
-    };
-    const saveForm = () => {
-        setNotes([...notes, form]);
-        setForm(notesEmptyState);
-        closeModal();
-    };
+    const {
+        notes,
+        form,
+        updateForm,
+        saveForm,
+        deleteNote,
+        openNote,
+        openModal,
+        closeModal,
+        isModalOpen,
+    } = useNotes();
 
     return (
         <Container component="main" maxWidth="s">
@@ -65,7 +55,7 @@ export const Dashboard = () => {
                     </Button>
                 </Box>
             </Tooltip>
-            <Notes notes={notes} />
+            <Notes notes={notes} openNote={openNote} deleteNote={deleteNote} />
             {isModalOpen ? (
                 <NoteModal
                     handleClose={closeModal}

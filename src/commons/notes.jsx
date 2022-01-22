@@ -5,9 +5,16 @@ import Grid from "@mui/material/Grid";
 
 import { Note } from "../commons/note";
 
-export const Notes = ({ notes }) => {
+export const Notes = ({ notes, openNote, deleteNote }) => {
     const buildNotes = () =>
-        notes.map((note, index) => <Note key={`note-${index}`} {...note} />);
+        notes.map((note, index) => (
+            <Note
+                key={`note-${index}`}
+                openNote={openNote}
+                deleteNote={deleteNote}
+                {...note}
+            />
+        ));
 
     return (
         <Grid
@@ -23,4 +30,6 @@ export const Notes = ({ notes }) => {
 
 Notes.propTypes = {
     notes: PropTypes.array,
+    openNote: PropTypes.func,
+    deleteNote: PropTypes.func,
 };
