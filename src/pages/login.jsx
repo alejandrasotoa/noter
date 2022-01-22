@@ -4,7 +4,6 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
@@ -65,9 +64,6 @@ export const Login = () => {
                     >
                         Sign In
                     </Button>
-                    <Link href="/sign-up" variant="body2">
-                        {"Don't have an account? Sign Up"}
-                    </Link>
                 </Box>
             </Box>
         </Container>

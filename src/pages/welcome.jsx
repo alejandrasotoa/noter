@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link as RouterLink } from "react-router-dom";
+
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
@@ -40,13 +42,18 @@ export const Welcome = () => {
                         }}
                     >
                         <Button
-                            href="/login"
+                            component={RouterLink}
+                            to="/login"
                             variant="outlined"
                             sx={{ marginRight: 2 }}
                         >
                             Yes, take me to login!
                         </Button>
-                        <Button href="/sign-up" variant="outlined">
+                        <Button
+                            component={RouterLink}
+                            to="/sign-up"
+                            variant="outlined"
+                        >
                             No, I want to sign up!
                         </Button>
                     </Box>
